@@ -1,0 +1,19 @@
+{
+  "name": "pt.nos.cordova.plugin",
+  "version": "3.8.0",
+  "cordova": {
+    "id": "pt.nos.cordova.plugin",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="pt.nos.cordova.plugin" version="4.7.2">
+    <name>NOSCordovaPlugin</name>
+    <js-module name="NOSCordovaPlugin" src="www/NOSCordovaPlugin.js">
+        <clobbers target="cordova.plugins.NOSCordovaPlugin" />
+    </js-module>
+
+    <dependency id="cordova-plugin-add-swift-support" version="1.7.2" />
+
+    <!--<preference name="URL_SCHEME" />-->
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="NOSCordovaPlugin">
+                <param name="android-package" value="pt.nos.cordova.plugin.NOSCordovaPlugin" />
+            </feature>
+        </config-file>
+        <config-file parent="/manifest" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        </config-file>
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
+            <activity android:label="" android:name="pt.nos.cordova.plugin.NOSPluginExternalWebView" />
+            <activity android:label="" android:name="pt.nos.cordova.plugin.NOSPluginInternalLogin" />
+
+        </config-file>
+        
+        <source-file src="src/android/NOSCordovaPlugin.java" target-dir="src/pt/nos/cordova/plugin" />
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!--<data android:scheme="$URL_SCHEME" android:host="prelogin"/>-->
+            </intent-filter>
+        </config-file>
+
+
+        <source-file src="src/android/NOSPluginExternalWebView.java" target-dir="src/pt/nos/cordova/plugin" />
+        <source-file src="src/android/NOSPluginInternalLogin.java" target-dir="src/pt/nos/cordova/plugin" />
+        <source-file src="src/android/NOSPluginExternalWebViewLogout.java" target-dir="src/pt/nos/cordova/plugin" />
+
+        
+        <source-file src="src/android/res/layout/layout_activity_external_webview.xml" target-dir="res/layout" />
+        <source-file src="src/android/res/layout/layout_activity_internal_login.xml" target-dir="res/layout" />
+
+        <source-file src="src/android/res/background_button_disabled.xml" target-dir="res/drawable" />
+        <source-file src="src/android/res/background_button_enabled.xml" target-dir="res/drawable" />
+        <source-file src="src/android/res/background_buttons.xml" target-dir="res/drawable" />
+        <source-file src="src/android/res/button_image_color.xml" target-dir="res/drawable" />
+        <source-file src="src/android/res/button_state.xml" target-dir="res/drawable" />
+        
+        <source-file src="src/android/res/icon_close.png" target-dir="res/drawable" />
+        <source-file src="src/android/res/icon_back.png" target-dir="res/drawable" />
+        <source-file src="src/android/res/icon_forward.png" target-dir="res/drawable" />
+        <source-file src="src/android/res/icon_refresh.png" target-dir="res/drawable" />
+        <source-file src="src/android/res/icon_toolbar_close.png" target-dir="res/drawable" />
+        <source-file src="src/android/res/icon_toolbar_refresh.png" target-dir="res/drawable" />
+
+        <source-file src="src/android/assets/AzoSansWeb-Medium.ttf" target-dir="assets" />
+        
+        <framework src="com.android.support:customtabs:23.0.0" />
+
+        <source-file src="src/android/helpers/CustomTabServiceHelper.java"    target-dir="src/pt/nos/cordova/plugin/helpers" />
+        <source-file src="src/android/helpers/CustomTabsHelper.java"          target-dir="src/pt/nos/cordova/plugin/helpers" />
+        <source-file src="src/android/helpers/ServiceConnection.java"         target-dir="src/pt/nos/cordova/plugin/helpers" />
+        <source-file src="src/android/helpers/ServiceConnectionCallback.java" target-dir="src/pt/nos/cordova/plugin/helpers" />
+        
+    </platform>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="NOSCordovaPlugin">
+                <param name="ios-package" value="NOSCordovaPlugin" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/Bridging-Header.h" />
+        <source-file src="src/ios/NOSCordovaPlugin.swift" />
+        <source-file src="src/ios/NOSPluginExternalWebView.swift" />
+        <source-file src="src/ios/NOSPluginExternalWebViewLogout.swift" />
+
+
+        <resource-file src="src/ios/Resources/icon-webview-left.png" />
+        <resource-file src="src/ios/Resources/icon-webview-left@2x.png" />
+        <resource-file src="src/ios/Resources/icon-webview-left@3x.png" />
+        
+        <resource-file src="src/ios/Resources/icon-webview-right.png" />
+        <resource-file src="src/ios/Resources/icon-webview-right@2x.png" />
+        <resource-file src="src/ios/Resources/icon-webview-right@3x.png" />
+
+        <resource-file src="src/ios/Resources/icon-webview-refresh.png" />
+        <resource-file src="src/ios/Resources/icon-webview-refresh@2x.png" />
+        <resource-file src="src/ios/Resources/icon-webview-refresh@3x.png" />
+        
+        <resource-file src="src/ios/Resources/icon_toolbar_close.png" />
+        <resource-file src="src/ios/Resources/icon_toolbar_close@2x.png" />
+        <resource-file src="src/ios/Resources/icon_toolbar_close@3x.png" />
+        
+        <resource-file src="src/ios/Resources/icon_toolbar_refresh.png" />
+        <resource-file src="src/ios/Resources/icon_toolbar_refresh@2x.png" />
+        <resource-file src="src/ios/Resources/icon_toolbar_refresh@3x.png" />
+        
+    </platform>
+</plugin>
