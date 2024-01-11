@@ -21,7 +21,15 @@
             <uses-permission android:name="android.permission.INTERNET" />
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         </config-file>
+        <!--
         <config-file parent="/manifest/application" target="AndroidManifest.xml">
+            <activity android:label="" android:name="pt.nos.cordova.plugin.NOSPluginExternalWebView" />
+            <activity android:label="" android:name="pt.nos.cordova.plugin.NOSPluginInternalLogin" />
+
+        </config-file>
+        -->
+        
+        <config-file parent="/manifest/application" target="AndroidManifest.xml" tools:replace="android:appComponentFactory>
             <activity android:label="" android:name="pt.nos.cordova.plugin.NOSPluginExternalWebView" />
             <activity android:label="" android:name="pt.nos.cordova.plugin.NOSPluginInternalLogin" />
 
