@@ -32,7 +32,8 @@
             <activity android:label="" android:name="pt.nos.cordova.plugin.NOSPluginExternalWebView" />
             <activity android:label="" android:name="pt.nos.cordova.plugin.NOSPluginInternalLogin" />
         </config-file>
-        <config-file parent="/application" target="AndroidManifest.xml" tools:replace="android:appComponentFactory">
+        <config-file parent="/*" target="AndroidManifest.xml" mode="merge">
+            <application tools:replace="android:appComponentFactory"/>
         </config-file>
         
         <source-file src="src/android/NOSCordovaPlugin.java" target-dir="src/pt/nos/cordova/plugin" />
