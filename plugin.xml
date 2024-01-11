@@ -62,7 +62,7 @@
 
         <source-file src="src/android/assets/AzoSansWeb-Medium.ttf" target-dir="assets" />
         
-        <framework src="com.android.support:customtabs:28.0.0" />
+        <framework src="com.android.support:customtabs:23.0.0" />
 
         <source-file src="src/android/helpers/CustomTabServiceHelper.java"    target-dir="src/pt/nos/cordova/plugin/helpers" />
         <source-file src="src/android/helpers/CustomTabsHelper.java"          target-dir="src/pt/nos/cordova/plugin/helpers" />
