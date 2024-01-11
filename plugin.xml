@@ -29,7 +29,7 @@
         </config-file>
         -->
         
-        <config-file parent="/manifest/application" target="AndroidManifest.xml" tools:replace="android:appComponentFactory>
+        <config-file parent="/manifest/application" target="AndroidManifest.xml" tools:replace="android:appComponentFactory">
             <activity android:label="" android:name="pt.nos.cordova.plugin.NOSPluginExternalWebView" />
             <activity android:label="" android:name="pt.nos.cordova.plugin.NOSPluginInternalLogin" />
 
